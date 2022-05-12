@@ -1,4 +1,4 @@
-# Real Estate Washington State/Case Study: Regression
+# Real Estate Seattle, WA/Case Study: Regression
 
 ![Real-Estate-Logo-Vactor](https://user-images.githubusercontent.com/103149782/167866803-2edaf60c-3047-4d7b-952c-9e58bbdd3845.png)
 
