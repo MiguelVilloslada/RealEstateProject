@@ -12,8 +12,9 @@ Colaborators [Miguel Villoslada](https://github.com/MiguelVilloslada) and [Andre
 * [First ideas](#section4)
 * [In-Depth Analysis](#section5)
 * [Conclusions](#section6)
-* [Tableau](githublinktableau)
-* [SQL](https://github.com/andy1coupe/RealEstateWashingtonState/blob/main/Midbootproject2.sql)
+* [Tableau](#section7)
+* [SQL](#section8)
+* [Presentation](#section9)
 
 
 <a id='section1'></a>
@@ -26,8 +27,7 @@ We are working as analysts for a real estate company. Our company wants to build
 
 Our job is to build a model that will predict the price of a house based on features in the dataset. Our management also wants to explore the characteristics of the houses using some business intelligence tools. One of those parameters includes understanding which factors are responsible for higher property value - $650K and above.
 
-We followed this workflow in Python in order to build the required model:
-![Explore the data_using Pandas library.jpg](*********.jpg)
+We followed this workflow in Python in order to build the required model.  Explore our Python Notebook on the following [link.](https://github.com/andy1coupe/RealEstateProject/blob/ae4614cd45aaaa26068f3d4b698e380c3f765e24/Python/Project%20Real%20Estate%20Final.ipynb)
 
 
 <a id='section3'></a>
@@ -53,25 +53,45 @@ Our first approach consisted of:
 <a id='section5'></a>
 ### In-Depth Analysis
 
-* We proceeded to realize the first iteration of our Machine Learning Model,
-and our accuracy score R2 was relatively close to 1, so the model performs well, but we wanted to improved it.
-<img src="*********.png"/>
-* In the second iteration we did a preprocessing: We went through the standardization using StandardScaler to rescale and OneHotEncoder to process the categoricals. We got a better R2:
-<img src="*********.png"/>
-* We went through a third iteration, this time we did a rescale using the logarithmic method and we normalized the data using the Dummies Encoder
-<img src="**********.png"/>
+* We proceeded to realize the first iteration of linear regression using our Machine Learning Model only dropping the columns id and date.  Our accuracy score R2 was 0.7068, so the model performs well, but we wanted to improved it.
+
+* In the second iteration linear regression we dropped id duplicates for houses sold several times only keeping the last sale, changing the year of renovation to binary 0 and 1, an removing the outlier of the bad data 33 bedroom property.  Our R2 went down to 0.6914.
+
+* In our third iteration using linear regression, we kept the same changes as our second model but rescaled the data using MinMaxScaler and got the same result of 0.6914
+
+* In our fourth iteration we used KNN model with K=4 and rescaling using MinMaxScaler, our r2 model result was 0.7864 which we were very pleased with considering our previous results.
 
 
 <a id='section6'></a>
+### Conclusions 
+
+After running three versions of regression models we came to the conclusion that our best price prediction model was using the KNN (K-Nearest Neighbour) model, using K=4 which gave us a satisfying r2 result of 0.7864.
+
+Generally speaking we came to the concclusion that dropping multiple features did not improve the accuracy of our models and that when predicitng the value of a property all the features are relevant in our machine learning model. 
+
+To understand which factors are responsible for a property value of over $650,000 we used SQL to calculate the Mode on the main factors 
+* Bedrooms 4  
+* Bathrooms 2.5
+* Sqft Living 2,440
+* Condition 3
+* Grade 9
+* Year Built 2014 
+* Most Expensive Zip codes of the data set were  Bellevue 98004, Medina 98039 and Mercer Island 98040. 
+
+Seattle is home to more billionaires that any other city in the USA, a total of 8 billionaires live there with a combined net worth of $252B. Neighbours include Bill Gates, Jeff Bezos and Colleen Willoughby. 
+
+<a id='section7'></a>
 ### Tableau
-[Link to tableau story](***********.tableau)
 
-* Our assignment deliverables also included visualization with Tableau. We aimed to visualize our findings in a way that a non-technical audience would find simple to understand as well as visually pleasing.
-
-<img src="********.png"/>
+Our assignment deliverables also included visualization with Tableau. We aimed to visualize our findings in a way that a non-technical audience would find simple to understand as well as visually pleasing. To view our story follow the [link.](https://public.tableau.com/app/profile/miguel.angel1252/viz/ProjectRealEstate/Story1)
 
 
-
+<a id='section8'></a>
 ### SQL
 
-We used SQL to reach a deeper understanding of our dataset. We used queries to answer the questions set by our real estate company. Follow the [link](https://github.com/andy1coupe/RealEstateWashingtonState/blob/main/Midbootproject2.sql) to dive into our queries. 
+We used SQL to reach a deeper understanding of our dataset. We used queries to answer the questions set by our real estate company. Follow the [link](https://github.com/andy1coupe/RealEstateProject/blob/ae4614cd45aaaa26068f3d4b698e380c3f765e24/SQL/Project_Real_State.sql) to dive into our queries. 
+
+<a id='section9'></a>
+### Presentation
+
+We used Powerpoint to make our presentation in the most visually appealing and simple way to present to stakeholders.  To view our presentation follow the [link.](https://ironhackus-my.sharepoint.com/:p:/g/personal/andrew_coupe_ironhackus_onmicrosoft_com/ERXzhC8nTqFGj4SUWIwhxUEBi7BMXTOVtpMA_OpGISjXhA?e=lcQWNb)
