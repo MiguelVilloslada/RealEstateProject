@@ -54,11 +54,9 @@ Our first approach consisted of:
 
 * We proceeded to realize the first iteration of linear regression using our Machine Learning Model only dropping the columns id and date.  Our accuracy score R2 was 0.7068, so the model performs well, but we wanted to improved it.
 
-* In the second iteration linear regression we dropped id duplicates for houses sold several times only keeping the last sale, changing the year of renovation to binary 0 and 1, an removing the outlier of the bad data 33 bedroom property.  Our R2 went down to 0.6914.
+* In the second iteration linear regression we dropped id duplicates for houses sold several times only keeping the last sale, changing the year of renovation to binary 0 and 1, an removing the outlier of the bad data 33 bedroom property. We rescaled the data using MinMaxScaler.  Our R2 went down to 0.6914.
 
-* In our third iteration using linear regression, we kept the same changes as our second model but rescaled the data using MinMaxScaler and got the same result of 0.6914
-
-* In our fourth iteration we used KNN model with K=4 and rescaling using MinMaxScaler, our r2 model result was 0.7864 which we were very pleased with considering our previous results.
+* In our third iteration we used KNN model with K=4, our r2 model result was 0.7864 which we were very pleased with considering our previous results.
 
 
 <a id='section6'></a>
@@ -66,7 +64,7 @@ Our first approach consisted of:
 
 After running three versions of regression models we came to the conclusion that our best price prediction model was using the KNN (K-Nearest Neighbour) model, using K=4 which gave us a satisfying r2 result of 0.7864.
 
-Generally speaking we came to the concclusion that dropping multiple features did not improve the accuracy of our models and that when predicitng the value of a property all the features are relevant in our machine learning model. 
+Generally speaking we came to the conclusion that dropping multiple features did not improve the accuracy of our models and that when predicitng the value of a property all the features are relevant in our machine learning model. 
 
 To understand which factors are responsible for a property value of over $650,000 we used SQL to calculate the Mode on the main factors 
 * Bedrooms 4  
