@@ -40,7 +40,6 @@ Our first approach consisted of:
 * Exploring the data (EDA Method)
 * Data wrangling
 * Data cleaning
-* Check for multicolinearity
 
  <a id='section4'></a>
 ### First ideas
